@@ -1,0 +1,24 @@
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
+
+<ul id="dogs">
+  <li data-dog='{ "id": 101, "name": "Sable", "genus": "Husky Huskius" }'>
+    Sable -- Husky Huskius
+  </li>
+
+  <li data-dog='{ "id": 234, "name": "Blixa", "genus": "Corgi Corgiorum" }'>
+    Blixa -- Corgi Corgiorum
+  </li>
+</ul>
+
+<script>
+  // Install click handlers on the li.dog elements.
+  $("li").on("click", event => {
+    const $dogLi = $(event.currentTarget);
+
+    // pull dog attributes out of the DOM to identify the dog.
+    const dog = $dogLi.data("dog");
+    console.log(dog);
+
+    alert(dog.name + " loves you!");
+  });
+</script>

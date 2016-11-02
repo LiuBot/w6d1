@@ -1,0 +1,18 @@
+<ul id="cats">
+</ul>
+
+<script>
+  window.setTimeout( () => {
+    // When the script tag is run, document.getElementById("cats") asks
+    // the browser to find an element with the id cats. This method returns
+    // a subclass of HTMLElement, which inherits from Element.
+    const ul = document.getElementById("cats");
+
+    // We then build a new li element, via document.createElement. We set
+    // its textContent, and then append this to the ul. The new element
+    // is not inserted into the page unless we call appendChild.
+    const li = document.createElement("li");
+    li.textContent = "This is injected by JavaScript";
+    ul.appendChild(li);
+  }, 3000);
+</script>

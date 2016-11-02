@@ -1,0 +1,57 @@
+<style>
+  li.green {
+    background-color: green;
+  }
+  li.blue{
+    background-color: blue;
+  }
+</style>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
+
+<ul>
+  <li>Racecars</li>
+  <li>Lasers</li>
+  <li>Aeroplanes</li>
+</ul>
+
+<script>
+  const $listItems = $("li");
+
+  // you can iterate with the each method
+  $listItems.each(function (index) {
+  // The function is called for each `HTMLElement` in `$listItems`;
+  // each time it sets `this` to the next `HTMLElement` in the set.
+    console.log([index, this.textContent].join(" "));
+  });
+    // The function is called for each `HTMLElement` in `$listItems`;
+    // each time it sets `this` to the next `HTMLElement` in the set.
+
+
+  // after one second, make the list green
+  window.setTimeout( () => {
+    // $listItems.each( (_, obj) => {
+    //   // in the low-level DOM API, `element.classList` returns a
+    //   // `ClassList` object; calling `ClassList#add` adds the class to
+    //   // the element.
+    //   obj.classList.add("green");
+    // });
+
+    // more convenient; uses **implicit iteration**
+    $listItems.addClass("green");
+
+  }, 1000);
+
+  // after another second, make the list blue
+  window.setTimeout( () => {
+    // $listItems.each( (_, obj) => {
+    //   // in the low-level DOM API, `element.classList` returns a
+    //   // `ClassList` object; calling `ClassList#add` adds the class to
+    //   // the element.
+    //   obj.classList.add("blue");
+    // });
+
+    // more convenient; uses **implicit iteration**
+    $listItems.addClass("blue");
+  }, 2000);
+</script>
