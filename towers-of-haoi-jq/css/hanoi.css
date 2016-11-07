@@ -1,0 +1,62 @@
+html, body, figure, figcaption, ul, li, h1 {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font:inherit;
+}
+
+
+.hanoi {
+  margin: 30px auto;
+  width: 600px;
+}
+
+
+ul {
+	padding: 0px 0px 10px 0px;
+	width: 180px;
+	list-style: none;
+	margin: 0px 10px;
+	float:left; 
+	cursor: pointer;
+	border-bottom: 10px solid black;
+}
+
+ul:hover{
+	border-color: blue;
+}
+
+ul:selected{
+	border-color: green;
+}
+
+li {
+	width: 0px;
+	height: 50px;
+	background: gray;
+	border-radius: 25px;
+	margin: 20px auto;
+}
+
+li.disk-1{
+	width: 25px;
+}
+li.disk-2{
+	width: 50px;
+}
+li.disk-3{
+	width: 75px;
+}
+
+h1 {
+	text-align: center;
+	font-family: Arial, sans-serif;
+	font-size: 50px;
+}
+
+.cf:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+

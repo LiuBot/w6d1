@@ -39,17 +39,12 @@ li.played {
 	color: black;
 }
 
-h1 {
+h1, h2 {
 	text-align: center;
 	font-family: Arial, sans-serif;
 	font-size: 70px;
 }
 
-h2 {
-	text-align: center;
-	font-family: Arial, sans-serif;
-	font-size: 70px;
-}
 
 .cf:after{
 	content:"";
@@ -80,11 +75,4 @@ h2 {
 li.loser{ /* need to specify li to make this work otherwise it will be overridden*/
   background: white;
   color: whitesmoke;
-}
-
-
-
-.loser{
-	background-color: red;
-	color: white;
 }
