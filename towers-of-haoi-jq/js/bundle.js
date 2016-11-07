@@ -163,7 +163,7 @@
 	// Reset the ivar after. Alert the user if this was an invalid move.
 
 		unbindEvents(){
-			$("ul").off();
+			this.$el.off();
 		}
 
 		clickTower(event){
