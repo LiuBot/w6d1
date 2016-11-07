@@ -1,8 +1,7 @@
-html, body, figure, figcaption, ul, li, h1 {
+html, body, figure, figcaption, ul, li, h1, h2 {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font:inherit;
 }
 
 
@@ -26,16 +25,20 @@ ul:hover{
 	border-color: blue;
 }
 
-ul:selected{
+ul.selected{
 	border-color: green;
 }
 
+
 li {
 	width: 0px;
-	height: 20px;
-	background: gray;
+	height: 15px;
+	background: gold;
 	border-radius: 25px;
 	margin: 20px auto;
+	border: gray;
+	border-width: ;
+
 }
 
 li.disk-1{
@@ -52,6 +55,12 @@ h1 {
 	text-align: center;
 	font-family: Arial, sans-serif;
 	font-size: 50px;
+}
+
+h2 {
+	font-size: 30px;
+	font-family: Arial, sans-serif;
+	text-align: center;
 }
 
 .cf:after{

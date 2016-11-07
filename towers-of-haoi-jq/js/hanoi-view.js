@@ -2,9 +2,16 @@ class HanoiView {
   constructor(game, $el) {
   	this.game = game;
   	this.$el = $el;
+  	this.fromTowerIdx = null;
+
+    this.$el.on(
+      "click",
+      "ul",
+      this.clickTower.bind(this)
+    );
+
   	this.setupTowers();
   	this.render();
-  	this.fromTowerIdx = null;
   }
 
 
@@ -14,12 +21,33 @@ class HanoiView {
 // you can identify because the ivar has been set), perform the move. 
 // Reset the ivar after. Alert the user if this was an invalid move.
 
-	clickTower(event){
-
+	unbindEvents(){
+		$("ul").off();
 	}
 
+	clickTower(event){
+// the index() method returns the index position of
+// specified elements relative to other specified elements
+	 const clickedTowerIdx = $(event.currentTarget).index();
 
+	 if (this.fromTowerIdx === null){
+	 	this.fromTowerIdx = clickedTowerIdx;
+	 } else {
+		 	if (!this.game.move(this.fromTowerIdx, clickedTowerIdx)){
 
+		 		alert("Invalid move! Try again.");
+		 	} 
+
+		 		this.fromTowerIdx = null;
+			}
+		 
+		 this.render();
+
+		if (this.game.isWon()){
+			this.unbindEvents();
+			this.$el.append(`<h2>You've solved the Towers of Hanoi!</h2>`);
+ 		}
+ }
 
 
 // Write a View.prototype.setupTowers method to fill the main DOM 
